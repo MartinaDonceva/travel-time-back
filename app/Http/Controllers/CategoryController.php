@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function show(Category $category): JsonResource
     {
         $category = Category::query()->where('id', $category->id)->first()
-            ->loadMissing('lectures', 'questions', 'question_answers');
+            ->loadMissing('lectures', 'questions', 'questions.question_answers');
 
         return JsonResource::make($category);
     }
