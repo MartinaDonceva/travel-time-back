@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index(): AnonymousResourceCollection
     {
-        $categories = Category::all();
+        $categories = Category::with('questions')->get();
 
         return JsonResource::collection($categories);
     }

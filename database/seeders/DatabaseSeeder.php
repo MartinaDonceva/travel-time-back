@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Eloquent\Concerns\QueriesRelationships;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +16,9 @@ class DatabaseSeeder extends Seeder
     {
        $this->call([
            CategorySeeder::class,
-           LectureSeeder::class
+           LectureSeeder::class,
+           QuestionSeeder::class,
+           QuestionAnswerSeeder::class,
        ]);
     }
 }
